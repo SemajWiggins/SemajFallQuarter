@@ -3,10 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-5.3.8-dist/css/bootstrap.min.css') }}">
+    <script src="{{ url_for('static', filename='bootstrap-5.3.8-dist/css/bootstrap.min.css') }}">
     <title>Document</title>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Business Name<a/>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home<a/>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Team<a/>
+
     <h1>Welcome{{name}} To my Flask App!</h1>
     <p>THis page was loaded from a html template!</p>
+
+
+
 </body>
 </html>
