@@ -8,9 +8,10 @@
     <title>{% block title %}My Website{% endblock %}</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-5.3.8-dist/css/bootstrap.min.css') }}">
+    <link href="fonts.googleapis.com" rel="stylesheet">
 </head>
 
-<body>
+    <body style="font-family: 'Julius Sans One', sans-serif;">
 
     {% block navbar %}{% endblock %}
 
@@ -21,7 +22,28 @@
 
         {% block footer %}{% endblock %}
 
-    <script src="{{ url_for('static', filename='bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js') }}"></script>
+    <style>
+    body {
+        background-image: url("https://img.freepik.com/free-vector/minimalist-background-gradient-colorful-style_698780-835.jpg?semt=ais_hybrid&w=740&q=80");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+    }
+</style>
+
+    
+        <script src="{{ url_for('static', filename='bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js') }}"></script>
+    <style>
+        @font-face {
+            font-family: 'Julius Sans One'; /* Name you will use in your styles */
+            src: url('fonts/JuliusSansOne-Regular.woff2') format('woff2'),
+                 url('fonts/JuliusSansOne-Regular.woff') format('woff'),
+                 url('fonts/JuliusSansOne-Regular.ttf') format('truetype'); /* Fallback TTF */
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
 
 </body>
 </html>

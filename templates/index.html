@@ -1,46 +1,183 @@
-{% extends 'base.html'%}
+{% extends 'base.html' %}
 
 {% block title %}SAW Builds - Homepage{% endblock %}
 
 {% block navbar %}
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">SAW Builds</a>
-                <div class="collapse navbar-collapse">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/">Home</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">Team</a>
-                        </li>
-                        <li class="nav-item">
-                         <a class="nav-link" href="#">About</a>
-                            </li>
-                        <li class="nav-item">
-                         <a class="nav-link" href="#">Sign Up</a>
-                        </li>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container-fluid">
 
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        {% endblock %}
+        <a class="navbar-brand fw-bold" href="/">SAW Builds</a>
 
-        {% block content %}
-    <h1>Welcome To my Flask App!</h1>
-    <p>This page was loaded from a html template!</p>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="card" style="width: 18rem;">
-        <img src="{{ url_for('static', filename='images/headshot.jpg') }}" class="card-img-top" alt="Semaj Headshot">
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-        <div class="card-body">
-            <h5 class="card-title">Semaj Wiggins</h5>
-            <p class="card-text">Web Developer</p>
-            <a href="#" class="btn btn-primary">View Profile</a>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/">Builds</a>
+                </li>
+
+                <li class="nav-item ms-4">
+                    <a class="nav-link" href="#">Customize</a>
+                </li>
+
+                <li class="nav-item ms-4">
+                    <a class="nav-link" href="#">Resources</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav">
+                <li class="nav-item me-3">
+                    <a class="nav-link" href="#">Sign Up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-light btn-sm" href="#">Log In</a>
+                </li>
+            </ul>
         </div>
     </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+@font-face {
+    font-family: 'JuliusSansOne';
+    src: url("{{ url_for('static', filename='fonts/JuliusSansOne-Regular.ttf') }}") format("truetype");
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    padding: 30px;
+}
+
+.video-card {
+    background: #1c1c1c;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.45);
+}
+
+.thumbnail-container {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.thumbnail-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-info {
+    padding: 12px;
+}
+
+.video-title {
+    font-family: 'JuliusSansOne', sans-serif;
+    color: #ffffff;
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+}
+
+.video-sub {
+    color: #9aa0a6;
+    font-size: 0.85rem;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+</style>
+
+<div class="video-grid">
+
+    <a href="/customize/1" class="card-link">
+        <div class="video-card">
+            <div class="thumbnail-container">
+                <img src="static/images/mountain.jpg"
+                     class="thumbnail-img" alt="Print 1">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Mountain Print</div>
+                <div class="video-sub">Customize • PLA</div>
+            </div>
+        </div>
+    </a>
+
+    <a href="/customize/2" class="card-link">
+        <div class="video-card">
+            <div class="thumbnail-container">
+                <img src="static/images/katanna.jpg"
+                     class="thumbnail-img" alt="Print 2">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Katnna Print</div>
+                <div class="video-sub">Customize • PLA</div>
+            </div>
+        </div>
+    </a>
+    
+    <a href="/customize/3" class="card-link">
+        <div class="video-card">
+            <div class="thumbnail-container">
+                <img src="static/images/minivase.jpg"
+                     class="thumbnail-img" alt="Print 3">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Mini Vase Print</div>
+                <div class="video-sub">Customize • PLA</div>
+            </div>
+        </div>
+    </a>    
+    <a href="/customize/4" class="card-link">
+        <div class="video-card">
+            <div class="thumbnail-container">
+                <img src="static/images/shark.jpg"
+                     class="thumbnail-img" alt="Print 4">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Shark Print</div>
+                <div class="video-sub">Customize • PLA</div>
+            </div>
+        </div>
+        <a href="/customize/5" class="card-link">
+        <div class="video-card">
+            <div class="thumbnail-container">
+                <img src="static/images/brain.jpg"
+                     class="thumbnail-img" alt="Print 5">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Brain Print</div>
+                <div class="video-sub">Customize • PLA</div>
+            </div>
+        </div>
+    </a>    
+    <a href="/customize/6" class="card-link">
+        <div class="video-card">
+            <div class="thumbnail-container">
+                <img src="static/images/frog.jpg"
+                     class="thumbnail-img" alt="Print 6">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Multicolor Frog Print</div>
+                <div class="video-sub">Customize • PLA</div>
+            </div>
+        </div>
+</div>
 
 {% endblock %}
 
-{% block footer %} {% endblock %}
+{% block footer %}{% endblock %}
